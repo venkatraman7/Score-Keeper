@@ -1,3 +1,10 @@
 <resources>
   <string name="app_name">ScoreKeeper</string>
+
+  <!--Home Screen-->
+  <string name="home_new_game">New Game</string>
+  <string name="home_load_game">Load Game</string>
+  <string name="home_player_list">Player List</string>
+  <string name="home_game_history">Game History</string>
+
 </resources>
