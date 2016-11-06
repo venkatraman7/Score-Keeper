@@ -1,11 +1,14 @@
-package com.collaboration.scorekeeper;
+package com.collaboration.scorekeeper.ui.ui;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-public class ScoreKeeperActivity extends Activity implements View.OnClickListener {
+import com.collaboration.scorekeeper.R;
+
+public class ScoreKeeperActivity extends AppCompatActivity implements View.OnClickListener {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class ScoreKeeperActivity extends Activity implements View.OnClickListene
         break;
       case R.id.image_btn_player_list:
         Toast.makeText(this, getString(R.string.home_player_list), Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(ScoreKeeperActivity.this, PlayerListActivity.class));
         break;
       case R.id.image_btn_game_history:
         Toast.makeText(this, getString(R.string.home_game_history), Toast.LENGTH_SHORT).show();

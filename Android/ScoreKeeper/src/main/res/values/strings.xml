@@ -7,4 +7,8 @@
   <string name="home_player_list">Player List</string>
   <string name="home_game_history">Game History</string>
 
+  <string name="title_activity_player_list">PlayerListActivity</string>
+  <string name="dummy_button">Dummy Button</string>
+  <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

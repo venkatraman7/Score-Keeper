@@ -5,7 +5,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context="com.collaboration.scorekeeper.ScoreKeeperActivity">
+  tools:context="com.collaboration.scorekeeper.ui.ui.ScoreKeeperActivity">
 
   <Space
     android:id="@+id/space_vertical_splitter"

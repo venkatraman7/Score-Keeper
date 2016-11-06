@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/add_player"
+    android:icon="@mipmap/ic_add_player"
+    android:title="Add"
+    app:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/edit_player"
+    android:icon="@mipmap/ic_edit_player"
+    android:title="Edit"
+    app:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/delete_player"
+    android:icon="@mipmap/ic_delete_player"
+    android:title="Delete"
+    app:showAsAction="ifRoom"/>
+</menu>
