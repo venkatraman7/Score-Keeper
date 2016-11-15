@@ -36,6 +36,7 @@ public class ScoreKeeperActivity extends AppCompatActivity implements View.OnCli
         break;
       case R.id.image_btn_game_history:
         Toast.makeText(this, getString(R.string.home_game_history), Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(ScoreKeeperActivity.this, GameHistoryActivity.class));
         break;
     }
   }

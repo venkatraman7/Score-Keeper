@@ -22,6 +22,8 @@
       android:name=".ui.ui.PlayerListActivity"
       android:label="@string/home_player_list">
     </activity>
+    <activity android:name=".ui.ui.GameHistoryActivity"
+      android:label="History"/>
   </application>
 
 </manifest>

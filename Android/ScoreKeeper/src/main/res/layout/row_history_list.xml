@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Space
+        android:id="@+id/center_marker"
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/history_detail_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/center_marker"
+        android:layout_toLeftOf="@id/center_marker"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/txt_game_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Game Name: Game 1"/>
+
+        <TextView
+            android:id="@+id/txt_winner_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Winner Name: Vignesh"/>
+
+        <TextView
+            android:id="@+id/txt_played_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Date : 07/07/2016"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/history_detail_container"
+        android:layout_alignBottom="@id/history_detail_container"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/ic_history_delete"
+        android:contentDescription="@string/app_name"
+         />
+
+</RelativeLayout>
