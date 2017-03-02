@@ -1,7 +1,9 @@
 package com.collaboration.scorekeeper.ui.ui;
 
+import android.annotation.TargetApi;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.collaboration.scorekeeper.R;
+import com.collaboration.scorekeeper.ui.adapter.SelectPlayersAdapter;
+import com.collaboration.scorekeeper.ui.model.PlayerListModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,8 +58,14 @@ public class ScoreKeeperActivity extends AppCompatActivity implements View.OnCli
 
   private void showSelectPlayersDialog() {
 
-    List<String> playerList = Arrays.asList("Player1", "Player2", "Player3");
-    SelectPlayersListFragment playersListFragment = SelectPlayersListFragment.newInstance((ArrayList<String>) playerList);
+    //List<String> playerList = Arrays.asList("Player1", "Player2", "Player3");
+    ArrayList<String> playerList = new ArrayList<>();
+    playerList.add("Player1");
+    playerList.add("Player2");
+    playerList.add("Player3");
+
+    //ArrayList<String> playerList = new PlayerListModel("")
+    SelectPlayersListFragment playersListFragment = SelectPlayersListFragment.newInstance(playerList);
     playersListFragment.setCancelable(false);
     playersListFragment.show(getFragmentManager(), SelectPlayersListFragment.PLAYER_LIST);
 
@@ -65,7 +75,7 @@ public class ScoreKeeperActivity extends AppCompatActivity implements View.OnCli
 
     public static final String PLAYER_LIST = "PlayerList";
 
-    private List<String> playerList;
+    private ArrayList<String> playerList;
 
     private ListView playersListView;
 
@@ -85,6 +95,7 @@ public class ScoreKeeperActivity extends AppCompatActivity implements View.OnCli
       super.onCreate(savedInstanceState);
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -92,7 +103,7 @@ public class ScoreKeeperActivity extends AppCompatActivity implements View.OnCli
       playersListView = (ListView) view.findViewById(R.id.list_players);
       playerList = getArguments().getStringArrayList(PLAYER_LIST);
       ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.row_select_players, playerList);
-      playersListView.setAdapter(adapter);
+      playersListView.setAdapter(new SelectPlayersAdapter(getActivity(), playerList));
       return view;
     }
   }
