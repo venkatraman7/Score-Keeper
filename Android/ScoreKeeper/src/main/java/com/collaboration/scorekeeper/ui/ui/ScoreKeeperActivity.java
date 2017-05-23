@@ -66,7 +66,7 @@ public class ScoreKeeperActivity extends AppCompatActivity implements View.OnCli
 
     //ArrayList<String> playerList = new PlayerListModel("")
     SelectPlayersListFragment playersListFragment = SelectPlayersListFragment.newInstance(playerList);
-    playersListFragment.setCancelable(false);
+    playersListFragment.setCancelable(true);
     playersListFragment.show(getFragmentManager(), SelectPlayersListFragment.PLAYER_LIST);
 
   }
@@ -102,7 +102,6 @@ public class ScoreKeeperActivity extends AppCompatActivity implements View.OnCli
       View view = inflater.inflate(R.layout.popup_select_players, container, false);
       playersListView = (ListView) view.findViewById(R.id.list_players);
       playerList = getArguments().getStringArrayList(PLAYER_LIST);
-      ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.row_select_players, playerList);
       playersListView.setAdapter(new SelectPlayersAdapter(getActivity(), playerList));
       return view;
     }
